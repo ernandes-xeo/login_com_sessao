@@ -5,9 +5,7 @@
         <title></title>
         <?php
         session_start();
-
-        //var_dump($_SESSION);
-
+      
 
         if (!isset($_SESSION['usuario']) == true && 
                 (!isset($_SESSION['senha']) == true)) {
@@ -17,18 +15,15 @@
             header('location:index.php');
         }
 
-        $logado = $_SESSION['usuario'];
-        $tuma = $_SESSION['turma'];
-        //var_dump($_SESSION);
         ?>
     </head>
     <body>
-        <?php
-            echo 'Bem vindo ' . $logado . ' :)';
-            echo "<h1> $tuma </h1>";
-        ?>
+        
+        Aqui é o admin
+        <?php echo $_SESSION['data'];        ?>
+
         </br>
-         <a type="button" href="admin.php">admin</a>
+        <a type="button" href="site.php">site</a>
         <a type="button" href="logoff.php">desconectar</a>
     </body>
 </html>
